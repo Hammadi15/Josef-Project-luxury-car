@@ -1,42 +1,34 @@
 import type { Agent } from '../types'
 
-// Made-up agents. Phone numbers use 555-01xx, which is kept for examples.
+// Our team of 3. Phone numbers use 555-01xx and emails use .example, so they are pretend contact details.
 export const agents: Agent[] = [
   {
-    id: 'sofia',
-    name: 'Sofia Lind',
-    title: 'Senior sales agent',
+    id: 'josef',
+    name: 'Josef',
+    title: 'General Manager and Head of Sales',
     phone: '+1 555 0101',
-    email: 'sofia@supercarcompany.example',
-    languages: ['English', 'Swedish'],
-    bio: 'Has sold over 120 hypercars and knows every Koenigsegg by heart.',
+    email: 'josef@supercarcompany.example',
+    task: 'Price × cars sold · Earnings × profit rate',
+    bio: 'Leads the company and the sales team. Josef handles our rarest hypercars and makes sure every deal adds up.',
+    lead: true,
   },
   {
-    id: 'marcus',
-    name: 'Marcus Berg',
-    title: 'Track car specialist',
+    id: 'shawqi',
+    name: 'Shawqi',
+    title: 'Finance Advisor',
     phone: '+1 555 0102',
-    email: 'marcus@supercarcompany.example',
-    languages: ['English', 'German'],
-    bio: 'Former race engineer. Helps you pick the right car for the track.',
+    email: 'shawqi@supercarcompany.example',
+    task: 'Price ÷ years = payment per year',
+    bio: 'Builds payment plans that fit your budget, down to the last decimal.',
   },
   {
-    id: 'layla',
-    name: 'Layla Haddad',
-    title: 'Finance agent',
+    id: 'mohammed',
+    name: 'Mohammed',
+    title: 'Performance Engineer',
     phone: '+1 555 0103',
-    email: 'layla@supercarcompany.example',
-    languages: ['English', 'Arabic', 'French'],
-    bio: 'Builds payment plans that fit your budget, down to the decimal.',
-  },
-  {
-    id: 'noah',
-    name: 'Noah Karlsson',
-    title: 'Delivery and service',
-    phone: '+1 555 0104',
-    email: 'noah@supercarcompany.example',
-    languages: ['English', 'Swedish'],
-    bio: 'Makes sure your car arrives safely, anywhere in the world.',
+    email: 'mohammed@supercarcompany.example',
+    task: 'Miles ÷ gallons = miles per gallon',
+    bio: 'Tests every car on the track and knows its speed, power, and fuel use by heart.',
   },
 ]
 

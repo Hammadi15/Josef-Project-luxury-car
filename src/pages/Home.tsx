@@ -115,9 +115,9 @@ export default function Home() {
         <div className="section-head">
           <Reveal>
             <h2 className="big-heading">
-              Meet our <span className="serif">agents</span>
+              Meet the <span className="serif">team</span>
             </h2>
-            <p className="muted">Every car comes with an agent who answers your questions and handles the deal.</p>
+            <p className="muted">Three people, one goal: the right car at the right price. Every car has one of us as its agent.</p>
           </Reveal>
         </div>
         <div className="agent-grid">

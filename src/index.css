@@ -331,7 +331,7 @@ textarea { resize: vertical; }
 .feature p { margin: 0; }
 
 /* Agents */
-.agent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.agent-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
 .agent-grid > div { height: 100%; }
 .agent-card { height: 100%; display: flex; flex-direction: column; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color 0.3s, transform 0.4s var(--ease); }
 .agent-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
@@ -352,7 +352,11 @@ textarea { resize: vertical; }
   font-size: 1.4rem;
 }
 .avatar.small { width: 46px; height: 46px; font-size: 1.15rem; }
-.languages { font-size: 0.85rem; }
+.agent-card { position: relative; }
+.agent-card.lead { border-color: var(--gold); background: linear-gradient(160deg, rgba(217, 180, 74, 0.1), var(--surface) 55%); }
+.lead-badge { position: absolute; top: 1.1rem; right: 1.1rem; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--gold); color: var(--ink); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.agent-card.lead .agent-head { padding-right: 5.5rem; }
+.agent-task { display: flex; align-items: center; gap: 0.45rem; font-size: 0.85rem; color: var(--gold); }
 .agent-contact { display: flex; gap: 0.5rem; margin-top: auto; padding-top: 0.5rem; }
 .agent-contact a {
   flex: 1 1 auto;
@@ -380,6 +384,7 @@ textarea { resize: vertical; }
 .team-number { position: absolute; top: 1rem; right: 1.25rem; font-family: var(--font-serif); font-style: italic; color: rgba(20, 20, 20, 0.25); font-size: 1.8rem; }
 .tag { display: inline-block; margin-bottom: 0.75rem; padding: 0.25rem 0.7rem; border-radius: 999px; background: rgba(138, 106, 18, 0.1); color: var(--gold-deep); font-size: 0.8rem; font-weight: 600; }
 .team-card .muted { margin-bottom: 0.25rem; }
+.team-person { margin: -0.25rem 0 0.5rem; font-family: var(--font-serif); font-style: italic; font-size: 1.6rem; line-height: 1.1; color: var(--ink); }
 .problem { margin: 0; font-family: var(--font-display); font-weight: 800; font-stretch: 75%; font-size: 2.4rem; line-height: 1.1; }
 .answer { margin: 0.25rem 0 0; color: var(--gold-deep); font-weight: 600; }
 

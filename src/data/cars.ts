@@ -19,7 +19,7 @@ export const cars: Car[] = [
     description: 'A Swedish hypercar with a twin-turbo V8. One of the fastest cars in the world.',
     cutout: 'cars/koenigsegg-agera-cutout.webp',
     photo: 'cars/koenigsegg-agera.webp',
-    agentId: 'sofia',
+    agentId: 'josef',
   },
   {
     id: 'apollo-ie',
@@ -38,7 +38,7 @@ export const cars: Car[] = [
     description: 'A wild V12 hypercar from Germany. Only 10 were ever made.',
     cutout: 'cars/apollo-ie-cutout.webp',
     photo: 'cars/apollo-ie.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'pagani-zonda-r',
@@ -57,7 +57,7 @@ export const cars: Car[] = [
     description: 'An Italian track car made of carbon fiber, with a loud Mercedes-AMG V12.',
     cutout: 'cars/pagani-zonda-r-cutout.webp',
     photo: 'cars/pagani-zonda-r.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'lamborghini-urus-mansory',
@@ -76,7 +76,7 @@ export const cars: Car[] = [
     description: 'A super SUV with a Mansory body kit. Room for 5 people and supercar speed.',
     cutout: 'cars/lamborghini-urus-mansory-cutout.webp',
     photo: 'cars/lamborghini-urus-mansory.webp',
-    agentId: 'sofia',
+    agentId: 'josef',
   },
   {
     id: 'rolls-royce-phantom',
@@ -95,7 +95,7 @@ export const cars: Car[] = [
     description: 'A hand-built V12 limousine with a starry roof lining and a ride as smooth as a boat on calm water.',
     cutout: 'cars/rolls-royce-phantom-cutout.webp',
     photo: 'cars/rolls-royce-phantom.webp',
-    agentId: 'sofia',
+    agentId: 'josef',
   },
   {
     id: 'bmw-m4-competition',
@@ -114,7 +114,7 @@ export const cars: Car[] = [
     description: 'A twin-turbo six-cylinder coupe that is fast on the track and easy to drive every day.',
     cutout: 'cars/bmw-m4-competition-cutout.webp',
     photo: 'cars/bmw-m4-competition.webp',
-    agentId: 'layla',
+    agentId: 'shawqi',
   },
   {
     id: 'audi-r8',
@@ -133,7 +133,7 @@ export const cars: Car[] = [
     description: 'A mid-engine V10 supercar with Quattro all-wheel drive, built next to Audi race cars.',
     cutout: 'cars/audi-r8-cutout.webp',
     photo: 'cars/audi-r8.webp',
-    agentId: 'layla',
+    agentId: 'shawqi',
   },
   {
     id: 'ferrari-sf90',
@@ -152,7 +152,7 @@ export const cars: Car[] = [
     description: 'A plug-in hybrid Ferrari with a V8 and three electric motors. It can even drive on electric power alone.',
     cutout: 'cars/ferrari-sf90-cutout.webp',
     photo: 'cars/ferrari-sf90.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'laferrari',
@@ -171,7 +171,7 @@ export const cars: Car[] = [
     description: "Ferrari's first hybrid hypercar (code name F150). A V12 plus an electric motor, and only 499 were made.",
     cutout: 'cars/laferrari-cutout.webp',
     photo: 'cars/laferrari.webp',
-    agentId: 'noah',
+    agentId: 'josef',
   },
   {
     id: 'mclaren-720s',
@@ -190,7 +190,7 @@ export const cars: Car[] = [
     description: 'A carbon-fiber supercar with doors that open upward and a twin-turbo V8 behind the seats.',
     cutout: 'cars/mclaren-720s-cutout.webp',
     photo: 'cars/mclaren-720s.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'porsche-gt3-rs',
@@ -209,7 +209,7 @@ export const cars: Car[] = [
     description: 'A race car with a license plate. Its huge rear wing pushes the car onto the road in fast corners.',
     cutout: 'cars/porsche-gt3-rs-cutout.webp',
     photo: 'cars/porsche-gt3-rs.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'lamborghini-veneno',
@@ -228,7 +228,7 @@ export const cars: Car[] = [
     description: "One of the rarest Lamborghinis ever. Built for the brand's 50th birthday, with a body shaped like a fighter jet.",
     cutout: 'cars/lamborghini-veneno-cutout.webp',
     photo: 'cars/lamborghini-veneno.webp',
-    agentId: 'sofia',
+    agentId: 'josef',
   },
   {
     id: 'lamborghini-svj',
@@ -247,7 +247,7 @@ export const cars: Car[] = [
     description: 'The wildest Aventador, with active aerodynamics and a loud V12. It once set a lap record at the Nürburgring.',
     cutout: 'cars/lamborghini-svj-cutout.webp',
     photo: 'cars/lamborghini-svj.webp',
-    agentId: 'noah',
+    agentId: 'josef',
   },
   {
     id: 'lamborghini-huracan',
@@ -266,7 +266,7 @@ export const cars: Car[] = [
     description: 'A sharp V10 supercar with smart all-wheel steering that makes it easy to drive fast.',
     cutout: 'cars/lamborghini-huracan-cutout.webp',
     photo: 'cars/lamborghini-huracan.webp',
-    agentId: 'noah',
+    agentId: 'josef',
   },
   {
     id: 'bugatti-chiron',
@@ -285,7 +285,7 @@ export const cars: Car[] = [
     description: 'A 1,479 hp hypercar with a 16-cylinder engine and four turbos. One of the fastest cars ever built.',
     cutout: 'cars/bugatti-chiron-cutout.webp',
     photo: 'cars/bugatti-chiron.webp',
-    agentId: 'sofia',
+    agentId: 'josef',
   },
   {
     id: 'mercedes-amg-g63',
@@ -304,7 +304,7 @@ export const cars: Car[] = [
     description: 'A boxy luxury off-roader with a twin-turbo V8. It can climb mountains and still look good in the city.',
     cutout: 'cars/mercedes-amg-g63-cutout.webp',
     photo: 'cars/mercedes-amg-g63.webp',
-    agentId: 'layla',
+    agentId: 'shawqi',
   },
   {
     id: 'mercedes-amg-gt63',
@@ -323,7 +323,7 @@ export const cars: Car[] = [
     description: 'A four-door coupe with supercar speed. Room for the family, and a V8 for the fun.',
     cutout: 'cars/mercedes-amg-gt63-cutout.webp',
     photo: 'cars/mercedes-amg-gt63.webp',
-    agentId: 'layla',
+    agentId: 'shawqi',
   },
   {
     id: 'aston-martin-valhalla',
@@ -342,7 +342,7 @@ export const cars: Car[] = [
     description: "A hybrid hypercar with a V8 and electric motors, shaped with help from Aston Martin's Formula 1 team.",
     cutout: 'cars/aston-martin-valhalla-cutout.webp',
     photo: 'cars/aston-martin-valhalla.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
   {
     id: 'dodge-viper',
@@ -361,7 +361,7 @@ export const cars: Car[] = [
     description: 'A huge 8.4-liter V10 and a giant wing. The ACR version set lap records on 13 race tracks.',
     cutout: 'cars/dodge-viper-cutout.webp',
     photo: 'cars/dodge-viper.webp',
-    agentId: 'marcus',
+    agentId: 'mohammed',
   },
 ]
 

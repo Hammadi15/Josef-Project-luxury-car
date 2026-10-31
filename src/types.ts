@@ -31,8 +31,11 @@ export interface Agent {
   title: string
   phone: string
   email: string
-  languages: string[]
+  /** The math this person does in the project */
+  task: string
   bio: string
+  /** The team leader gets a highlighted card */
+  lead?: boolean
 }
 
 export interface Photo {

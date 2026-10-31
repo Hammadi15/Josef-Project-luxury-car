@@ -1,4 +1,4 @@
-import { Mail, Phone } from 'lucide-react'
+import { Calculator, Crown, Mail, Phone } from 'lucide-react'
 import type { Agent } from '../types'
 
 export function initials(name: string): string {
@@ -10,7 +10,12 @@ export function initials(name: string): string {
 
 export default function AgentCard({ agent }: { agent: Agent }) {
   return (
-    <article className="agent-card">
+    <article className={agent.lead ? 'agent-card lead' : 'agent-card'}>
+      {agent.lead && (
+        <span className="lead-badge">
+          <Crown size={14} /> Leader
+        </span>
+      )}
       <div className="agent-head">
         <div className="avatar">{initials(agent.name)}</div>
         <div>
@@ -19,7 +24,9 @@ export default function AgentCard({ agent }: { agent: Agent }) {
         </div>
       </div>
       <p className="muted">{agent.bio}</p>
-      <p className="languages">{agent.languages.join(' · ')}</p>
+      <p className="agent-task">
+        <Calculator size={15} /> {agent.task}
+      </p>
       <div className="agent-contact">
         <a href={`tel:${agent.phone.replace(/\s/g, '')}`}>
           <Phone size={15} /> {agent.phone}

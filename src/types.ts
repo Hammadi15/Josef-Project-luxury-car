@@ -34,3 +34,13 @@ export interface Agent {
   languages: string[]
   bio: string
 }
+
+export interface Photo {
+  /** Path inside public/ */
+  src: string
+  caption: string
+  author: string
+  license: string
+  /** Page on Wikimedia Commons where the photo comes from */
+  source: string
+}

@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
         <div>
           <p className="footer-label">Project</p>
-          <p className="muted">Grade 6 ESL Math · Luxury Car Sales. Specs are approximate.</p>
+          <p className="muted">Grade 6 ESL Math · Luxury Car Sales. Specs are approximate. Gallery photos from Wikimedia Commons (resized), credited under each photo.</p>
         </div>
       </div>
       <p className="footer-note">© 2026 Supercar Company. A school project.</p>

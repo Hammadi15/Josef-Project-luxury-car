@@ -4,10 +4,12 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ArrowLeft, Fuel, Gauge, Palette, Timer, Zap } from 'lucide-react'
 import { findCar } from '../data/cars'
 import { findAgent } from '../data/agents'
+import { gallery } from '../data/gallery'
 import { formatMillions, milesPerGallon } from '../math'
 import PaymentCalculator from '../components/PaymentCalculator'
 import ContactForm from '../components/ContactForm'
 import Reveal from '../components/Reveal'
+import Gallery from '../components/Gallery'
 
 type View = 'studio' | 'photo'
 const ease = [0.22, 1, 0.36, 1] as const
@@ -136,6 +138,8 @@ export default function CarDetails() {
           <ContactForm agent={agent} car={car} />
         </Reveal>
       </section>
+
+      <Gallery photos={gallery[car.id] ?? []} carName={`${car.brand} ${car.name}`} />
     </main>
   )
 }

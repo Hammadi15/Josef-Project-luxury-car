@@ -1,0 +1,13 @@
+# Netlify reads this file automatically when you connect the GitHub repo
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Send every page (like /cars/apollo-ie) to the React app so links and refreshes work
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

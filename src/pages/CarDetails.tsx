@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { findCar } from '../data/cars'
-import { formatThousands, milesPerGallon } from '../math'
+import { formatMillions, milesPerGallon } from '../math'
 import CarImage from '../components/CarImage'
 import PaymentCalculator from '../components/PaymentCalculator'
 
@@ -21,9 +21,6 @@ export default function CarDetails() {
     )
   }
 
-  // Always show 3 thumbnails so the layout matches the sketch, even before pictures are added
-  const thumbnails = car.images.length > 0 ? car.images : ['', '', '']
-
   return (
     <main className="section">
       <Link to="/" className="back">
@@ -32,24 +29,26 @@ export default function CarDetails() {
       <div className="details">
         <div>
           <CarImage src={car.images[selected]} alt={car.name} className="large" />
-          <div className="thumbnails">
-            {thumbnails.map((src, index) => (
-              <button
-                key={index}
-                className={index === selected ? 'thumb active' : 'thumb'}
-                onClick={() => setSelected(index)}
-                aria-label={`Show picture ${index + 1}`}
-              >
-                <CarImage src={src} alt={`${car.name} picture ${index + 1}`} />
-              </button>
-            ))}
-          </div>
+          {car.images.length > 1 && (
+            <div className="thumbnails">
+              {car.images.map((src, index) => (
+                <button
+                  key={src}
+                  className={index === selected ? 'thumb active' : 'thumb'}
+                  onClick={() => setSelected(index)}
+                  aria-label={`Show picture ${index + 1}`}
+                >
+                  <CarImage src={src} alt={`${car.name} picture ${index + 1}`} />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         <div>
           <p className="brand">{car.brand}</p>
           <h1>{car.name}</h1>
-          <p className="price">{formatThousands(car.price)}</p>
+          <p className="price">{formatMillions(car.price)}</p>
           <p className="muted">{car.description}</p>
 
           <table className="specs">

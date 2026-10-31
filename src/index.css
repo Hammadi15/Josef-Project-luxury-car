@@ -43,11 +43,11 @@ input, select {
 .navbar nav a:hover { color: var(--text); }
 
 .hero {
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   background:
-    linear-gradient(rgba(14, 14, 16, 0.55), var(--bg)),
-    radial-gradient(circle at 50% 30%, #3a2f12, var(--bg) 70%);
+    linear-gradient(rgba(14, 14, 16, 0.45), var(--bg)),
+    url('/cars/koenigsegg-agera.webp') center 62% / cover;
 }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
 .hero p { color: var(--muted); font-size: 1.15rem; }
@@ -56,15 +56,15 @@ input, select {
 .toolbar { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
 .toolbar input { flex: 1; min-width: 200px; }
 
-.car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+.car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
 .car-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: transform 0.2s, border-color 0.2s; }
 .car-card:hover { transform: translateY(-4px); border-color: var(--gold-dark); }
 .car-card-body { padding: 1rem 1.25rem 1.25rem; }
 .car-card h3 { font-size: 1.25rem; }
 
-.car-image { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--surface-2); }
+.car-image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 70%; background: var(--surface-2); }
 .car-image.placeholder { display: flex; align-items: center; justify-content: center; color: var(--muted); border: 2px dashed var(--border); }
-.car-image.large { border-radius: 14px; }
+.car-image.large { aspect-ratio: 4 / 5; object-position: center; border-radius: 14px; }
 
 .brand { margin: 0; color: var(--gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
 .muted { color: var(--muted); }

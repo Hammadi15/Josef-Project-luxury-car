@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { formatThousands } from '../math'
+import { formatMillions } from '../math'
 
 // The Financial Banker's math: price ÷ years = payment per year
 export default function PaymentCalculator({ price }: { price: number }) {
@@ -21,7 +21,7 @@ export default function PaymentCalculator({ price }: { price: number }) {
       </label>
       {years > 0 ? (
         <p>
-          {price.toFixed(1)} ÷ {years} = <strong>{formatThousands(perYear)}</strong> per year
+          {price.toFixed(1)} ÷ {years} = <strong>{formatMillions(perYear, 2)}</strong> per year
         </p>
       ) : (
         <p className="error">Enter a number bigger than 0.</p>

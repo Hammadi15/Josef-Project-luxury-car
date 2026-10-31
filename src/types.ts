@@ -2,7 +2,7 @@ export interface Car {
   id: string
   name: string
   brand: string
-  /** Price in thousands of dollars, like the project guide ($45.2 thousand) */
+  /** Price in millions of dollars, with a decimal ($1.6 million) */
   price: number
   topSpeed: number
   horsepower: number

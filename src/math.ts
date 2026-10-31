@@ -3,10 +3,10 @@ export function round1(value: number): number {
   return Math.round(value * 10) / 10
 }
 
-export function formatThousands(value: number): string {
-  return `$${round1(value).toFixed(1)} thousand`
+export function formatMillions(value: number, decimals = 1): string {
+  return `$${value.toFixed(decimals)} million`
 }
 
-export function milesPerGallon(miles: number, gallons: number): number {
-  return round1(miles / gallons)
+export function milesPerGallon(miles: number, gallons: number): string {
+  return round1(miles / gallons).toFixed(1)
 }

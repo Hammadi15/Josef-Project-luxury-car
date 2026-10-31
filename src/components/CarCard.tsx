@@ -1,32 +1,28 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Gauge, Timer, Zap } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import type { Car } from '../types'
 import { formatMillions } from '../math'
 import CarStage from './CarStage'
 
+// A tile in the collection grid: the car on the studio background, name and year underneath
 export default function CarCard({ car }: { car: Car }) {
   return (
     <Link to={`/cars/${car.id}`} className="car-card">
       <CarStage car={car} />
       <div className="car-card-body">
-        <p className="eyebrow">{car.brand}</p>
-        <h3>{car.name}</h3>
-        <p className="car-card-price">{formatMillions(car.price)}</p>
-        <ul className="quick-specs">
-          <li>
-            <Zap size={15} /> {car.horsepower.toLocaleString('en-US')} hp
-          </li>
-          <li>
-            <Gauge size={15} /> {car.topSpeed} mph
-          </li>
-          <li>
-            <Timer size={15} /> {car.zeroToSixty} s
-          </li>
-        </ul>
-        <span className="card-link">
-          View details <ArrowRight size={16} />
-        </span>
+        <div>
+          <p className="car-card-name">
+            {car.brand} <span className="serif">{car.name}</span>
+          </p>
+          <p className="car-card-meta">
+            {formatMillions(car.price)} · {car.topSpeed} mph · {car.zeroToSixty} s
+          </p>
+        </div>
+        <span className="car-card-year">{car.year}</span>
       </div>
+      <span className="car-card-arrow" aria-hidden="true">
+        <ArrowUpRight size={18} />
+      </span>
     </Link>
   )
 }

@@ -11,6 +11,11 @@ export interface Car {
   testGallons: number
   zeroToSixty: number
   color: string
+  year: number
+  /** Short line under the name in the showroom */
+  tagline: string
+  /** Background tint for this car in the showroom */
+  accent: string
   description: string
   /** Car cut out of its photo, shown on the studio background. Path inside public/. */
   cutout: string

@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, CreditCard, Search, Truck } from 'lucide-react'
-import { cars, findCar } from '../data/cars'
+import { BadgeCheck, CreditCard, Search, Truck } from 'lucide-react'
+import { cars } from '../data/cars'
 import { agents } from '../data/agents'
+import Hero from '../components/Hero'
+import Marquee from '../components/Marquee'
+import Showroom from '../components/Showroom'
+import Statement from '../components/Statement'
 import CarCard from '../components/CarCard'
-import CarStage from '../components/CarStage'
 import AgentCard from '../components/AgentCard'
 import TeamSection from '../components/TeamSection'
+import Reveal from '../components/Reveal'
 
 type SortOrder = 'low' | 'high' | 'fast'
-
-const heroCar = findCar('koenigsegg-agera')!
 
 const features = [
   { icon: BadgeCheck, title: 'Checked by engineers', text: 'Every car gets a 150-point check before it is sold.' },
@@ -29,53 +30,34 @@ export default function Home() {
       return sort === 'low' ? a.price - b.price : b.price - a.price
     })
 
-  const topSpeed = Math.max(...cars.map((car) => car.topSpeed))
-  const topPower = Math.max(...cars.map((car) => car.horsepower))
-
   return (
     <main>
-      <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-text">
-            <p className="eyebrow">Luxury hypercars</p>
-            <h1>Find your dream supercar</h1>
-            <p className="lead">
-              Hand-picked hypercars from Koenigsegg, Pagani, Apollo, and Lamborghini. Easy payments and a personal agent
-              for every car.
-            </p>
-            <div className="hero-actions">
-              <Link to="/#cars" className="button">
-                Browse cars <ArrowRight size={18} />
-              </Link>
-              <Link to="/#agents" className="button ghost">
-                Talk to an agent
-              </Link>
-            </div>
-            <dl className="stats">
-              <div>
-                <dt>Cars</dt>
-                <dd>{cars.length}</dd>
-              </div>
-              <div>
-                <dt>Top speed</dt>
-                <dd>{topSpeed} mph</dd>
-              </div>
-              <div>
-                <dt>Most power</dt>
-                <dd>{topPower.toLocaleString('en-US')} hp</dd>
-              </div>
-            </dl>
-          </div>
-          <CarStage car={heroCar} className="hero-stage" />
-        </div>
+      <Hero />
+      <Marquee items={['Koenigsegg', 'Apollo', 'Pagani', 'Lamborghini', 'Hypercars 2026']} />
+
+      <section className="intro">
+        <Reveal>
+          <p className="eyebrow">Showroom 2026</p>
+          <h2 className="intro-title">
+            A new era of <span className="serif">speed</span>
+          </h2>
+          <p className="intro-text">
+            Four machines, four stories. Carbon fiber, V12 and twin-turbo V8 engines, and top speeds past 270 mph. Scroll
+            through the showroom and meet each car up close.
+          </p>
+        </Reveal>
       </section>
 
-      <section id="cars" className="section">
+      <Showroom />
+      <Statement />
+
+      <section id="collection" className="section">
         <div className="section-head row">
-          <div>
-            <p className="eyebrow">Showroom</p>
-            <h2>Our cars</h2>
-          </div>
+          <Reveal>
+            <h2 className="big-heading">
+              The <span className="serif">collection</span>
+            </h2>
+          </Reveal>
           <div className="toolbar">
             <label className="search">
               <Search size={16} />
@@ -96,38 +78,43 @@ export default function Home() {
         </div>
         {shownCars.length > 0 ? (
           <div className="car-grid">
-            {shownCars.map((car) => (
-              <CarCard key={car.id} car={car} />
+            {shownCars.map((car, i) => (
+              <Reveal key={car.id} delay={i * 0.08}>
+                <CarCard car={car} />
+              </Reveal>
             ))}
           </div>
         ) : (
           <p className="muted">No cars match "{search}".</p>
         )}
-      </section>
 
-      <section className="section features">
-        {features.map(({ icon: Icon, title, text }) => (
-          <div key={title} className="feature">
-            <span className="feature-icon">
+        <div className="features">
+          {features.map(({ icon: Icon, title, text }, i) => (
+            <Reveal key={title} delay={i * 0.08} className="feature">
               <Icon size={22} />
-            </span>
-            <div>
               <h3>{title}</h3>
               <p className="muted small">{text}</p>
-            </div>
-          </div>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </section>
+
+      <Marquee items={['Talk to an agent', 'Easy payments', 'Delivered worldwide', 'Always faster']} reverse />
 
       <section id="agents" className="section">
         <div className="section-head">
-          <p className="eyebrow">Personal service</p>
-          <h2>Meet our agents</h2>
-          <p className="muted">Every car comes with an agent who answers your questions and handles the deal.</p>
+          <Reveal>
+            <h2 className="big-heading">
+              Meet our <span className="serif">agents</span>
+            </h2>
+            <p className="muted">Every car comes with an agent who answers your questions and handles the deal.</p>
+          </Reveal>
         </div>
         <div className="agent-grid">
-          {agents.map((agent) => (
-            <AgentCard key={agent.id} agent={agent} />
+          {agents.map((agent, i) => (
+            <Reveal key={agent.id} delay={i * 0.08}>
+              <AgentCard agent={agent} />
+            </Reveal>
           ))}
         </div>
       </section>

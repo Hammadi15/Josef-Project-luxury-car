@@ -1,20 +1,34 @@
 import { Link } from 'react-router-dom'
+import Contours from './Contours'
 
 export default function Footer() {
   return (
     <footer className="footer">
+      <Contours />
+      <p className="footer-big">
+        Always <span className="serif">faster.</span>
+      </p>
       <div className="footer-inner">
         <div>
-          <p className="logo">Supercar Company</p>
-          <p className="muted small">Hypercars, easy payments, and agents who know every detail.</p>
+          <p className="footer-label">Pages</p>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/#showroom">Showroom</Link>
+            <Link to="/#collection">Collection</Link>
+            <Link to="/#agents">Agents</Link>
+            <Link to="/#team">Our math</Link>
+          </nav>
         </div>
-        <nav>
-          <Link to="/#cars">Cars</Link>
-          <Link to="/#agents">Agents</Link>
-          <Link to="/#team">Our math</Link>
-        </nav>
+        <div>
+          <p className="footer-label">Visit</p>
+          <p className="muted">Supercar Company showroom, open every day 10–18</p>
+        </div>
+        <div>
+          <p className="footer-label">Project</p>
+          <p className="muted">Grade 6 ESL Math · Luxury Car Sales. Specs are approximate.</p>
+        </div>
       </div>
-      <p className="footer-note">Grade 6 ESL Math Project · Luxury Car Sales · Specs are approximate</p>
+      <p className="footer-note">© 2026 Supercar Company. A school project.</p>
     </footer>
   )
 }

@@ -14,7 +14,9 @@ export const cars: Car[] = [
     zeroToSixty: 2.8,
     color: 'White and black',
     description: 'A Swedish hypercar with a twin-turbo V8. One of the fastest cars in the world.',
-    images: ['cars/koenigsegg-agera.webp'],
+    cutout: 'cars/koenigsegg-agera-cutout.webp',
+    photo: 'cars/koenigsegg-agera.webp',
+    agentId: 'sofia',
   },
   {
     id: 'apollo-ie',
@@ -28,7 +30,9 @@ export const cars: Car[] = [
     zeroToSixty: 2.7,
     color: 'Purple',
     description: 'A wild V12 hypercar from Germany. Only 10 were ever made.',
-    images: ['cars/apollo-ie.webp'],
+    cutout: 'cars/apollo-ie-cutout.webp',
+    photo: 'cars/apollo-ie.webp',
+    agentId: 'marcus',
   },
   {
     id: 'pagani-zonda-r',
@@ -42,7 +46,9 @@ export const cars: Car[] = [
     zeroToSixty: 2.7,
     color: 'Carbon black',
     description: 'An Italian track car made of carbon fiber, with a loud Mercedes-AMG V12.',
-    images: ['cars/pagani-zonda-r.webp'],
+    cutout: 'cars/pagani-zonda-r-cutout.webp',
+    photo: 'cars/pagani-zonda-r.webp',
+    agentId: 'marcus',
   },
   {
     id: 'lamborghini-urus-mansory',
@@ -56,7 +62,9 @@ export const cars: Car[] = [
     zeroToSixty: 3.3,
     color: 'Forged carbon and turquoise',
     description: 'A super SUV with a Mansory body kit. Room for 5 people and supercar speed.',
-    images: ['cars/lamborghini-urus-mansory.webp'],
+    cutout: 'cars/lamborghini-urus-mansory-cutout.webp',
+    photo: 'cars/lamborghini-urus-mansory.webp',
+    agentId: 'sofia',
   },
 ]
 

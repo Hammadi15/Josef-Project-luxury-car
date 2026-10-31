@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Home from './pages/Home'
 import CarDetails from './pages/CarDetails'
 
-// Scrolls to #cars / #team / #contact when a nav link is clicked
+// Scrolls to #cars / #agents / #team when a nav link is clicked
 function ScrollToHash() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars/:id" element={<CarDetails />} />
       </Routes>
+      <Footer />
     </>
   )
 }

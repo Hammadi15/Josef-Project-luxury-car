@@ -12,6 +12,20 @@ export interface Car {
   zeroToSixty: number
   color: string
   description: string
-  /** Paths inside public/, for example "cars/my-car.jpg". Empty means a placeholder is shown. */
-  images: string[]
+  /** Car cut out of its photo, shown on the studio background. Path inside public/. */
+  cutout: string
+  /** The original photo. Path inside public/. */
+  photo: string
+  /** The sales agent who handles this car */
+  agentId: string
+}
+
+export interface Agent {
+  id: string
+  name: string
+  title: string
+  phone: string
+  email: string
+  languages: string[]
+  bio: string
 }

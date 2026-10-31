@@ -38,12 +38,17 @@ const roles: Role[] = [
 export default function TeamSection() {
   return (
     <section id="team" className="section">
-      <h2>Our team</h2>
+      <div className="section-head">
+        <p className="eyebrow">Multiplying and dividing decimals</p>
+        <h2>The math behind the deals</h2>
+        <p className="muted">Our 4 team roles and the numbers they work with every day.</p>
+      </div>
       <div className="team-grid">
-        {roles.map((role) => (
+        {roles.map((role, index) => (
           <div key={role.title} className="team-card">
+            <span className="team-number">0{index + 1}</span>
             <span className="tag">{role.title}</span>
-            <p className="muted">{role.task}</p>
+            <p className="muted small">{role.task}</p>
             <p className="problem">{role.problem}</p>
             <p className="answer">= {role.answer}</p>
           </div>

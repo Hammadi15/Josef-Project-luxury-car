@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import { Calculator } from 'lucide-react'
 import { formatMillions } from '../math'
+
+const quickYears = [1.2, 2.5, 5]
 
 // The Financial Banker's math: price ÷ years = payment per year
 export default function PaymentCalculator({ price }: { price: number }) {
@@ -7,22 +10,36 @@ export default function PaymentCalculator({ price }: { price: number }) {
   const perYear = years > 0 ? price / years : 0
 
   return (
-    <div className="calculator">
-      <h3>Payment calculator</h3>
-      <label>
-        Years to pay
+    <div className="panel">
+      <h3 className="panel-title">
+        <Calculator size={18} /> Payment calculator
+      </h3>
+      <div className="calc-row">
+        <label htmlFor="years">Years to pay</label>
         <input
+          id="years"
           type="number"
           min="0.1"
           step="0.1"
           value={years}
           onChange={(e) => setYears(Number(e.target.value))}
         />
-      </label>
+      </div>
+      <div className="chips">
+        {quickYears.map((y) => (
+          <button key={y} className={y === years ? 'chip active' : 'chip'} onClick={() => setYears(y)}>
+            {y} years
+          </button>
+        ))}
+      </div>
       {years > 0 ? (
-        <p>
-          {price.toFixed(1)} ÷ {years} = <strong>{formatMillions(perYear, 2)}</strong> per year
-        </p>
+        <div className="calc-result">
+          <span className="muted">
+            {price.toFixed(1)} ÷ {years} =
+          </span>
+          <strong>{formatMillions(perYear, 2)}</strong>
+          <span className="muted">per year</span>
+        </div>
       ) : (
         <p className="error">Enter a number bigger than 0.</p>
       )}

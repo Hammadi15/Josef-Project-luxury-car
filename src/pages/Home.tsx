@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { BadgeCheck, CreditCard, Search, Truck } from 'lucide-react'
-import { cars } from '../data/cars'
+import { brands, cars, featuredCars } from '../data/cars'
 import { agents } from '../data/agents'
 import Hero from '../components/Hero'
 import Marquee from '../components/Marquee'
@@ -22,8 +22,10 @@ const features = [
 export default function Home() {
   const [search, setSearch] = useState('')
   const [sort, setSort] = useState<SortOrder>('low')
+  const [brand, setBrand] = useState('All')
 
   const shownCars = cars
+    .filter((car) => brand === 'All' || car.brand === brand)
     .filter((car) => `${car.brand} ${car.name}`.toLowerCase().includes(search.toLowerCase()))
     .sort((a, b) => {
       if (sort === 'fast') return b.topSpeed - a.topSpeed
@@ -33,7 +35,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Marquee items={['Koenigsegg', 'Apollo', 'Pagani', 'Lamborghini', 'Hypercars 2026']} />
+      <Marquee items={[...brands, 'Hypercars 2026']} />
 
       <section className="intro">
         <Reveal>
@@ -42,8 +44,8 @@ export default function Home() {
             A new era of <span className="serif">speed</span>
           </h2>
           <p className="intro-text">
-            Four machines, four stories. Carbon fiber, V12 and twin-turbo V8 engines, and top speeds past 270 mph. Scroll
-            through the showroom and meet each car up close.
+            {cars.length} machines from {brands.length} legendary brands. Carbon fiber, V12 and W16 engines, and top speeds
+            past 270 mph. Scroll through our top {featuredCars.length} in the showroom, then explore the full collection.
           </p>
         </Reveal>
       </section>
@@ -76,16 +78,24 @@ export default function Home() {
             </select>
           </div>
         </div>
+        <div className="brand-chips" role="group" aria-label="Filter by brand">
+          {['All', ...brands].map((b) => (
+            <button key={b} className={b === brand ? 'chip active' : 'chip'} onClick={() => setBrand(b)}>
+              {b}
+              <span className="chip-count">{b === 'All' ? cars.length : cars.filter((car) => car.brand === b).length}</span>
+            </button>
+          ))}
+        </div>
         {shownCars.length > 0 ? (
           <div className="car-grid">
             {shownCars.map((car, i) => (
-              <Reveal key={car.id} delay={i * 0.08}>
+              <Reveal key={car.id} delay={(i % 3) * 0.08}>
                 <CarCard car={car} />
               </Reveal>
             ))}
           </div>
         ) : (
-          <p className="muted">No cars match "{search}".</p>
+          <p className="muted">No cars match your search.</p>
         )}
 
         <div className="features">

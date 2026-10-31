@@ -3,11 +3,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { pauseScroll } from '../smoothScroll'
+import { cars, featuredCars } from '../data/cars'
 
 const menuLinks = [
   { to: '/', label: 'Home', note: 'Start' },
-  { to: '/#showroom', label: 'Showroom', note: '4 cars' },
-  { to: '/#collection', label: 'Collection', note: 'All cars' },
+  { to: '/#showroom', label: 'Showroom', note: `Top ${featuredCars.length}` },
+  { to: '/#collection', label: 'Collection', note: `${cars.length} cars` },
   { to: '/#agents', label: 'Agents', note: 'Talk to us' },
   { to: '/#team', label: 'Our math', note: 'Decimals' },
 ]

@@ -5,7 +5,7 @@ import { ArrowLeft, Fuel, Gauge, Palette, Timer, Zap } from 'lucide-react'
 import { findCar } from '../data/cars'
 import { findAgent } from '../data/agents'
 import { gallery } from '../data/gallery'
-import { formatMillions, milesPerGallon } from '../math'
+import { formatPrice, milesPerGallon } from '../math'
 import PaymentCalculator from '../components/PaymentCalculator'
 import ContactForm from '../components/ContactForm'
 import Reveal from '../components/Reveal'
@@ -101,7 +101,7 @@ export default function CarDetails() {
           </p>
           <h1>{car.name}</h1>
           <p className="showroom-tagline">{car.tagline}</p>
-          <p className="car-hero-price">{formatMillions(car.price)}</p>
+          <p className="car-hero-price">{formatPrice(car.price)}</p>
         </motion.div>
 
         <div className="view-toggle">

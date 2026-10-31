@@ -2,8 +2,8 @@ import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react'
 import { ArrowRight, ChevronUp } from 'lucide-react'
-import { cars } from '../data/cars'
-import { formatMillions } from '../math'
+import { featuredCars as cars } from '../data/cars'
+import { formatPrice } from '../math'
 import { scrollToTarget } from '../smoothScroll'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -86,7 +86,7 @@ export default function Showroom() {
             <h2>{car.name}</h2>
             <p className="showroom-tagline">{car.tagline}</p>
             <div className="showroom-meta">
-              <span>{formatMillions(car.price)}</span>
+              <span>{formatPrice(car.price)}</span>
               <span>{car.topSpeed} mph</span>
               <span>{car.horsepower.toLocaleString('en-US')} hp</span>
             </div>

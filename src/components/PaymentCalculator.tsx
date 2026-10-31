@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Calculator } from 'lucide-react'
-import { formatMillions } from '../math'
+import { priceParts } from '../math'
 
 const quickYears = [1.2, 2.5, 5]
 
 // The Financial Banker's math: price ÷ years = payment per year
 export default function PaymentCalculator({ price }: { price: number }) {
   const [years, setYears] = useState(1.2)
-  const perYear = years > 0 ? price / years : 0
+  const { amount, unit } = priceParts(price)
+  const perYear = years > 0 ? amount / years : 0
 
   return (
     <div className="panel">
@@ -35,9 +36,11 @@ export default function PaymentCalculator({ price }: { price: number }) {
       {years > 0 ? (
         <div className="calc-result">
           <span className="muted">
-            {price.toFixed(1)} ÷ {years} =
+            {amount.toFixed(1)} ÷ {years} =
           </span>
-          <strong>{formatMillions(perYear, 2)}</strong>
+          <strong>
+            ${perYear.toFixed(2)} {unit}
+          </strong>
           <span className="muted">per year</span>
         </div>
       ) : (

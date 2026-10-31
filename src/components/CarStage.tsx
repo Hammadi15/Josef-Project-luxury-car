@@ -10,7 +10,7 @@ export default function CarStage({ car, className = '' }: CarStageProps) {
   return (
     <div className={`stage ${className}`}>
       <div className="stage-car">
-        <img src={`${import.meta.env.BASE_URL}${car.cutout}`} alt={`${car.brand} ${car.name}`} />
+        <img src={`${import.meta.env.BASE_URL}${car.cutout}`} alt={`${car.brand} ${car.name}`} loading="lazy" />
       </div>
     </div>
   )

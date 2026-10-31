@@ -2,7 +2,7 @@
 
 A Grade 6 ESL Math project: a luxury car sales website built with React, TypeScript, and Vite.
 
-It shows 4 hypercars (Koenigsegg Agera, Apollo IE, Pagani Zonda R, Lamborghini Urus Mansory) with a scrolling showroom, car pages with specs and a photo gallery, a payment calculator, sales agents, and the decimal math from the project guide (multiplying and dividing decimals).
+It shows 19 supercars and hypercars, from Bugatti and Koenigsegg to Rolls-Royce and Dodge, with a scrolling showroom, car pages with specs and a photo gallery, a payment calculator, sales agents, and the decimal math from the project guide (multiplying and dividing decimals).
 
 ## Run it on your computer
 

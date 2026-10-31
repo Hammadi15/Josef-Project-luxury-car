@@ -310,6 +310,8 @@ textarea { resize: vertical; }
 .search input { padding-left: 2.5rem; }
 
 /* Collection tiles */
+.brand-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: -1.5rem 0 2rem; }
+.chip-count { margin-left: 0.4rem; font-size: 0.75rem; opacity: 0.6; }
 .car-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
 .car-card { position: relative; display: block; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--surface); transition: border-color 0.4s; }
 .car-card .stage { aspect-ratio: 5 / 4; }
